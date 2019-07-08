@@ -4,7 +4,8 @@ const Datastore = require('nedb');
 const app = express();
 require('dotenv').config();
 
-app.listen(3001, () => console.log('Listening at port 3001'));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Starting server at port ${port}`));
 app.use(express.static('public'));
 app.use(express.json({ limit: '1mb' }));
 
@@ -55,7 +56,6 @@ app.get('/weather/:latlong', async (request, response) => {
     const aq_url = `https://api.openaq.org/v1/latest?coordinates=${lat},${long}`;
     const aq_response = await fetch(aq_url);
     const aq_data = await aq_response.json();
-    console.log(aq_data);
 
     const data = { weather: weather_data, aq: aq_data };
     response.json(data);
