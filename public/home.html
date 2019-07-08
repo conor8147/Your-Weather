@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Your Weather</title>
+    </head>
+    <body>
+        <h1>Your Weather</h1>
+            <a href='/home.html'>view current</a> | <a href='/logs.html'>view logs</a>
+        <p>
+            <strong>Latitude: </strong><span id='lat'>loading...</span> 
+            <strong>Longitude: </strong><span id='long'>loading...</span>
+            <p id='root'></p>
+        </p>
+        <button id='checkin'>Log Weather</button>
+        <button id='refresh'>Refresh</button>
+        <p id='isLogged'></p>
+        <script src='/home.js'></script>
+    </body>
+</html>
